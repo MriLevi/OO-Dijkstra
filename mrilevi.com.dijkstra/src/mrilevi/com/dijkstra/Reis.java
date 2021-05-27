@@ -5,6 +5,11 @@ import java.util.*;
 public class Reis {
 	private double Afstand;
 	private List<Stap> path = new ArrayList<>();
+	private String reistype;
+
+	public Reis(String reistype) {
+		this.reistype = reistype;
+	}
 
 	public void setPath(List<Stap> path) {
 		this.path = path;
@@ -14,18 +19,23 @@ public class Reis {
 		this.Afstand = pathdistance;
 	}
 
+
 	public String toString() {
-		String route = "";
-		String target = "";
-		System.out.println(path);
-		for (Stap tussenstap : path) {
-			target = "";
-			route += tussenstap;
-			route += ", ";
-			target += tussenstap;
+		String printstring;
+		System.out.println(reistype);
+		switch (reistype) {
+			case "vliegtuig":
+				printstring = " en die route kost " + Afstand + " euro. Je kans op bagage kwijtraken is: (helaas niet geimplementeerd)" ;
+				break;
+			case "auto":
+				printstring = " en die route is " + Afstand + " kilometer lang.";
+				break;
+			case "trein":
+				printstring = " en die route duurt " + Afstand + " minuten";
+				break;
+			default:
+				throw new IllegalStateException("Unexpected value: " + reistype);
 		}
-		return "Dit is de kortste routste naar " + target + ": " + route.substring(0, route.length() - 2) + " en dat is " + Afstand + this.path.get(0).getEdges().get(0);
+		return "De kortste route is " + path.toString().replace("[", "").replace("]", "") + printstring + "";
 	}
-
-
 }

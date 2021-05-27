@@ -26,6 +26,8 @@ public class Rit extends Edge {
 	public Integer getWeight() {
 		return kilometer;
 	}
+
+
 	public String toString() {
 		return " kilometer";
 	}

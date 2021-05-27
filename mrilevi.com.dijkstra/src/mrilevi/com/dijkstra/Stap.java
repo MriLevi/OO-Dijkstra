@@ -10,6 +10,7 @@ public class Stap implements java.lang.Comparable<Stap> {
 	private List<Edge> edges;
 	private Stap previousStap;
 	private Double minDistance = Double.MAX_VALUE;
+	private Double bagageKans = Double.MAX_VALUE;
 
 	public Stap(String name) {
 		this.name = name;
@@ -59,6 +60,16 @@ public class Stap implements java.lang.Comparable<Stap> {
 	public void setMinDistance(Double minDistance) {
 		this.minDistance = minDistance;
 	}
+
+	public Double getBagageKans() {
+		return this.bagageKans;
+	}
+
+
+	public void setBagageKans(Double bagageKans) {
+		this.bagageKans = bagageKans;
+	}
+
 
 	@Override
 	public String toString() {

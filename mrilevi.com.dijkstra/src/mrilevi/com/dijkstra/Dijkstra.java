@@ -8,6 +8,7 @@ public class Dijkstra {
     private double pathdistance = 0;
     public void computePath(Stap beginStap) {
         beginStap.setMinDistance(0.0);
+        beginStap.setBagageKans(0.0);
         PriorityQueue<Stap> priorityQueue = new PriorityQueue<>();
         priorityQueue.add(beginStap);
 
@@ -36,7 +37,9 @@ public class Dijkstra {
         return path;
     }
 
-    public double getPathdistance() {
+    public double getPathdistance(Stap targetStap) {
+        Stap stap1 = targetStap;
+        pathdistance = stap1.getMinDistance();
         return pathdistance;
     }
 }

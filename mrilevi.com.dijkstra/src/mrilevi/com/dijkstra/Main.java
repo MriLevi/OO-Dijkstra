@@ -20,8 +20,8 @@ public class Main {
 
         Dijkstra dijkstra = new Dijkstra();
         dijkstra.computePath(s1);
-        Reis reis = new Reis();
-        reis.setAfstand(dijkstra.getPathdistance());
+        Reis reis = new Reis("auto");
+        reis.setAfstand(dijkstra.getPathdistance(s6));
         reis.setPath(dijkstra.getShortestPathTo(s6));
         System.out.println(reis);
 
@@ -32,19 +32,41 @@ public class Main {
         Stap ss5 = new Stap("Berlijn");
         Stap ss6 = new Stap("London");
 
-        ss1.addEdge(new Vlucht(320,ss1,ss3,0.06));
-        ss1.addEdge(new Vlucht(559,ss1,ss2,0.10));
-        ss2.addEdge(new Vlucht(131,ss2,ss3, 0.01));
-        ss2.addEdge(new Vlucht(205,ss2,ss4,0.3));
-        ss3.addEdge(new Vlucht(605,ss3,ss5, 0.35));
-        ss3.addEdge(new Vlucht(320,ss3,ss6,0.2));
-        ss4.addEdge(new Vlucht(512,ss4,ss5, 0.03));
+        ss1.addEdge(new Vlucht(320,ss1,ss3));
+        ss1.addEdge(new Vlucht(559,ss1,ss2));
+        ss2.addEdge(new Vlucht(131,ss2,ss3));
+        ss2.addEdge(new Vlucht(205,ss2,ss4));
+        ss3.addEdge(new Vlucht(605,ss3,ss5));
+        ss3.addEdge(new Vlucht(325,ss3,ss6));
+        ss4.addEdge(new Vlucht(512,ss4,ss5));
 
         Dijkstra dijkstravlucht = new Dijkstra();
         dijkstravlucht.computePath(ss1);
-        Reis reisvlucht = new Reis();
-        reisvlucht.setAfstand(dijkstravlucht.getPathdistance());
+        Reis reisvlucht = new Reis("vliegtuig");
+        reisvlucht.setAfstand(dijkstravlucht.getPathdistance(ss6));
         reisvlucht.setPath(dijkstravlucht.getShortestPathTo(ss6));
         System.out.println(reisvlucht);
+
+        Stap trs1 = new Stap("Utrecht");
+        Stap trs2 = new Stap("Amersfoort");
+        Stap trs3 = new Stap("Amersfoort Schothors");
+        Stap trs4 = new Stap("Zwolle");
+        Stap trs5 = new Stap("Amsterdam Centraal");
+        Stap trs6 = new Stap("Amsterdam Zuid");
+
+        trs1.addEdge(new Treinrit(25,trs1,trs3));
+        trs1.addEdge(new Treinrit(18,trs1,trs2));
+        trs2.addEdge(new Treinrit(5,trs2,trs3));
+        trs2.addEdge(new Treinrit(40,trs2,trs4));
+        trs3.addEdge(new Treinrit(35,trs3,trs5));
+        trs3.addEdge(new Treinrit(65,trs3,trs6));
+        trs4.addEdge(new Treinrit(105,trs4,trs5));
+
+        Dijkstra treinstra = new Dijkstra();
+        treinstra.computePath(trs1);
+        Reis treinreis = new Reis("trein");
+        treinreis.setAfstand(dijkstra.getPathdistance(trs6));
+        treinreis.setPath(dijkstra.getShortestPathTo(trs6));
+        System.out.println(treinreis);
     }
 }
