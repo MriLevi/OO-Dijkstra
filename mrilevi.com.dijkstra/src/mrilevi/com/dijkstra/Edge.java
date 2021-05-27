@@ -28,7 +28,4 @@ public abstract class Edge {
 	public void setTargetStap(Stap targetStap) {
 		this.targetStap = targetStap;
 	}
-
-
-
 }

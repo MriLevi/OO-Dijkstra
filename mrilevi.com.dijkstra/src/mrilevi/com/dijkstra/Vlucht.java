@@ -4,13 +4,12 @@ public class Vlucht extends Edge {
 
 	private Integer prijs;
 
-	public Vlucht(Stap startStap, Stap targetStap, Integer prijs) {
+	public Vlucht(Integer prijs, Stap startStap, Stap targetStap) {
 		super(startStap, targetStap);
 		this.prijs = prijs;
 	}
 
 	public Integer getPrijs() {
-
 		return this.prijs;
 	}
 

@@ -1,5 +1,6 @@
 package mrilevi.com.dijkstra;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Stap {
@@ -9,76 +10,46 @@ public class Stap {
 	private boolean visited;
 	private List<Edge> edges;
 	private Stap previousStap;
-	private Double minDistance;
+	private Double minDistance = Double.MAX_VALUE;
 
-	/**
-	 * 
-	 * @param name
-	 */
 	public Stap(String name) {
-		// TODO - implement Stap.Stap
-		throw new UnsupportedOperationException();
+		this.name = name;
+		this.edges = new ArrayList<>();
 	}
 
 	public String getName() {
 		return this.name;
 	}
 
-	public String getId() {
-		// TODO - implement Stap.getId
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param obj
-	 */
-	public boolean equals(Object obj) {
-		// TODO - implement Stap.equals
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param s
-	 */
-	public void compareTo(Stap s) {
-		// TODO - implement Stap.compareTo
-		throw new UnsupportedOperationException();
-	}
 	public void addEdge(Edge edge) {
-		// TODO - implement Stap.addEdge
-		throw new UnsupportedOperationException();
+		this.edges.add(edge);
 	}
 
-	public void getEdges() {
-		// TODO - implement Stap.getEdges
-		throw new UnsupportedOperationException();
+	public List<Edge> getEdges() {
+		return this.edges;
+
 	}
 
-	public void setEdges() {
-		// TODO - implement Stap.setEdges
-		throw new UnsupportedOperationException();
+	public void setEdges(List<Edge> edges) {
+		this.edges = edges;
+
 	}
 
-	public void isVisited() {
-		// TODO - implement Stap.isVisited
-		throw new UnsupportedOperationException();
+	public boolean isVisited() {
+		return visited;
 	}
 
-	public void setVisited() {
-		// TODO - implement Stap.setVisited
-		throw new UnsupportedOperationException();
+	public void setVisited(boolean visited) {
+		this.visited = visited;
 	}
 
-	public void getPreviousStap() {
-		// TODO - implement Stap.getPreviousStap
-		throw new UnsupportedOperationException();
+	public Stap getPreviousStap() {
+		return previousStap;
+
 	}
 
 	public void setPreviousStap(Stap previousStap) {
-		// TODO - implement Stap.setPreviousStap
-		throw new UnsupportedOperationException();
+		this.previousStap = previousStap;
 	}
 
 	public Double getMinDistance() {
@@ -90,4 +61,7 @@ public class Stap {
 		this.minDistance = minDistance;
 	}
 
+	public Integer compareTo(Stap otherStap) {
+		return Double.compare(this.minDistance, otherStap.minDistance);
+	}
 }
