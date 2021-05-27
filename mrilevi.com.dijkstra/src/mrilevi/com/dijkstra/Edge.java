@@ -5,11 +5,6 @@ public abstract class Edge {
 	private Stap startStap;
 	private Stap targetStap;
 
-	/**
-	 * 
-	 * @param startStap
-	 * @param targetStap
-	 */
 	public Edge(Stap startStap, Stap targetStap) {
 		this.startStap = startStap;
 		this.targetStap = targetStap;

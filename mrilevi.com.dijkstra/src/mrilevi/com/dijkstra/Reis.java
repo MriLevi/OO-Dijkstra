@@ -4,11 +4,9 @@ import java.util.*;
 
 public class Reis implements Comparable {
 
-	Collection<Stap> stappen;
+	private List<Stap> path = new ArrayList<>();
 
-	private List<Vertex> path;
-
-	public void setPath(List<Vertex> path) {
+	public void setPath(List<Stap> path) {
 		this.path = path;
 	}
 

@@ -1,31 +1,29 @@
+package mrilevi.com.dijkstra;
+
 public class Vlucht extends Edge {
 
 	private Integer prijs;
 
+	public Vlucht(Stap startStap, Stap targetStap, Integer prijs) {
+		super(startStap, targetStap);
+		this.prijs = prijs;
+	}
+
 	public Integer getPrijs() {
+
 		return this.prijs;
 	}
 
-	/**
-	 * 
-	 * @param prijs
-	 */
 	public void setPrijs(Integer prijs) {
 		this.prijs = prijs;
 	}
 
 	public Integer getWeight() {
-		// TODO - implement Vlucht.getWeight
-		throw new UnsupportedOperationException();
+		return prijs;
 	}
 
-	/**
-	 * 
-	 * @param prijs
-	 */
-	public void setWeight(Integer prijs) {
-		// TODO - implement Vlucht.setWeight
-		throw new UnsupportedOperationException();
+	public void setWeight(Integer weight) {
+		prijs = weight;
 	}
 
 }
