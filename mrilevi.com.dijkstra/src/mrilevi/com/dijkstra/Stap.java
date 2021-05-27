@@ -3,9 +3,8 @@ package mrilevi.com.dijkstra;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stap {
+public class Stap implements java.lang.Comparable<Stap> {
 
-	Reis reis;
 	private String name;
 	private boolean visited;
 	private List<Edge> edges;
@@ -61,7 +60,13 @@ public class Stap {
 		this.minDistance = minDistance;
 	}
 
-	public Integer compareTo(Stap otherStap) {
+	@Override
+	public String toString() {
+		return name;
+	}
+
+	@Override
+	public int compareTo(Stap otherStap) {
 		return Double.compare(this.minDistance, otherStap.minDistance);
 	}
 }

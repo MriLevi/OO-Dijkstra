@@ -25,4 +25,8 @@ public class Treinrit extends Edge {
 		minutes = weight;
 	}
 
+	public String toString() {
+		return " minuten";
+	}
+
 }
